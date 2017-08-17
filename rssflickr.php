@@ -23,7 +23,6 @@ class Feed_Flickr_Widget extends WP_Widget{
 		isset($instance['title']) ? $title = $instance['title'] : null;
 		empty($instance['title']) ? $title = 'Flickr' : null;
 
-        isset($instance['feed_url']) ? $feed_url = $instance['feed_url'] : null;
         isset($instance['user_id']) ? $user_id = $instance['user_id'] : null;
         isset($instance['tags']) ? $tags = $instance['tags'] : null;
         isset($instance['quantidade']) ? $quantidade = $instance['quantidade'] : null;
@@ -34,12 +33,6 @@ class Feed_Flickr_Widget extends WP_Widget{
         <p>
         	<label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Título:'); ?></label>
             <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo esc_attr($title); ?>">
-        </p>
-
-        <!-- URL -->
-        <p>
-            <label for="<?php echo $this->get_field_id('feed_url'); ?>"><?php _e('URL do Feed:'); ?></label>
-            <input class="widefat" id="<?php echo $this->get_field_id('feed_url'); ?>" name="<?php echo $this->get_field_name('feed_url'); ?>" type="text" value="<?php echo esc_attr($feed_url); ?>">
         </p>
         
         <!-- USER ID -->
@@ -66,7 +59,6 @@ class Feed_Flickr_Widget extends WP_Widget{
 	public function update($new_instance, $old_instance){
 		$instance = array();
 		$instance['title'] = (!empty($new_instance['title']) ) ? strip_tags($new_instance['title']) : '';
-        $instance['feed_url'] = (!empty($new_instance['feed_url']) ) ? strip_tags($new_instance['feed_url']) : '';
         $instance['user_id'] = (!empty($new_instance['user_id']) ) ? strip_tags($new_instance['user_id']) : '';
         $instance['tags'] = (!empty($new_instance['tags']) ) ? strip_tags($new_instance['tags']) : '';
         $instance['quantidade'] = (!empty($new_instance['quantidade']) ) ? strip_tags($new_instance['quantidade']) : '';
@@ -76,7 +68,6 @@ class Feed_Flickr_Widget extends WP_Widget{
 
 	public function widget($args, $instance){
 		$title = apply_filters('widget_title', $instance['title']);
-        $feed_url = $instance['feed_url'];
         $user_id = $instance['user_id'];
         $tags = $instance['tags'];
         $quantidade = $instance['quantidade'];
