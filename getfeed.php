@@ -18,7 +18,9 @@
 						echo '<img src="'.$entry->children('http://search.yahoo.com/mrss/')->thumbnail->attributes()['url'].'" alt="'.$entry->title.'" title="'.$entry->title.'" width="75" height="75">';
 					echo '</a>';	
 					$count++;
-				if($count++ == $qnt) break;
+				if($count == $qnt){
+					break;
+				}
 			}
 			echo '</div>';
 		echo '</div>';
