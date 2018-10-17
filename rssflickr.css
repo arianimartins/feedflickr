@@ -1,5 +1,6 @@
 .flickr-images{
-	width: 300px !important;
+	/*width: 300px !important;*/
+    background: #000;
 	margin: auto !important;
 	text-align: center;
 }
