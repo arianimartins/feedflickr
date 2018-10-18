@@ -15,7 +15,7 @@
 			echo '<div class="flickr-images">';
 			foreach ($x->channel->item as $entry) {
 					echo '<a href="'.$entry->link.'">';
-						echo '<img src="'.$entry->children('http://search.yahoo.com/mrss/')->thumbnail->attributes()['url'].'" alt="'.$entry->title.'" title="'.$entry->title.'" width="100" height="100">';
+						echo '<img src="'.$entry->children('http://search.yahoo.com/mrss/')->thumbnail->attributes()['url'].'" alt="'.$entry->title.'" title="'.$entry->title.'" width="75" height="75">';
 					echo '</a>';	
 					$count++;
 				if($count == $qnt){

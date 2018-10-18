@@ -73,10 +73,10 @@ class Feed_Flickr_Widget extends WP_Widget{
         $quantidade = $instance['quantidade'];
 
         echo $args['before_widget'];
-        echo $args['before_title'];
-        echo $title;
-        echo $args['after_title'];
-            getFeed($user_id,$tags,$quantidade);
+        //echo $args['before_title'];
+        //echo $title;
+        //echo $args['after_title'];
+        getFeed($user_id,$tags,$quantidade);
         echo $args['after_widget'];
 	}
 

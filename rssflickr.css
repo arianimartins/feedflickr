@@ -20,7 +20,9 @@
 
 .flickr-images img {
     max-width: 100%;
-    margin: 5px;
+    width: 75px;
+    height: 75px;
+    /*margin: 5px;*/
 }
 
 .flickr-size-thumbnail .flickr-images {
