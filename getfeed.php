@@ -12,16 +12,23 @@
 		$count = 0;
 
 		echo '<div class="flickr-wrapper flickr-size-thumbnail">';
-			echo '<div class="flickr-images">';
-			foreach ($x->channel->item as $entry) {
-					echo '<a href="'.$entry->link.'">';
-						echo '<img src="'.$entry->children('http://search.yahoo.com/mrss/')->thumbnail->attributes()['url'].'" alt="'.$entry->title.'" title="'.$entry->title.'" width="75" height="75">';
-					echo '</a>';	
+			echo '<div class="flickr-widget">';
+				echo '<ul class="flickr-list">';
+
+				foreach ($x->channel->item as $entry) {
+					$imageUri = $entry->children("http://search.yahoo.com/mrss/")->content->attributes()['url'];
+
+					echo '<li class="flickr-item">';
+						echo '<a href="'.$entry->link.'" target="_blank">';
+							echo '<img class="flickr-image" src="'.$imageUri.'" alt="'.$entry->title.'" title="'.$entry->title.'">';
+						echo '</a>';
+					echo '</li>';
 					$count++;
-				if($count == $qnt){
-					break;
+					if($count == $qnt){
+						break;
+					}
 				}
-			}
+				echo '</ul>';
 			echo '</div>';
 		echo '</div>';
 	}
