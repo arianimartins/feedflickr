@@ -28,6 +28,7 @@
     margin: 0;
     margin-bottom: 0 !important;
     border: none !important;
+    /*flex: 1 0 calc(20%); -- 100 dividido pela quantidade de itens por linha*/
 }
 .flickr-image{ object-fit: cover; }
 
